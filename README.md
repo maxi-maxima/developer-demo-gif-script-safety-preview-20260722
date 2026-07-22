@@ -20,6 +20,13 @@ python developer_demo_gif_script_safety_preview.py examples/demo.sh
 # safe_to_record=False findings=2 storyboard_steps=3
 ```
 
+## Safer storyboard sharing
+Use `--redacted-storyboard` with JSON output when the storyboard will be pasted into a PR, issue, or launch checklist. Findings still show the original suspicious line for local debugging, while storyboard commands mask obvious secret assignments:
+
+```bash
+python developer_demo_gif_script_safety_preview.py --json --redacted-storyboard examples/demo.sh
+```
+
 ## Self-check
 ```bash
 python test_developer_demo_gif_script_safety_preview.py

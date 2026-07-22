@@ -20,6 +20,13 @@ python developer_demo_gif_script_safety_preview.py examples/demo.sh
 # safe_to_record=False findings=2 storyboard_steps=3
 ```
 
+## 更安全地分享分镜
+当需要把分镜粘贴到 PR、Issue 或发布检查清单时，可以配合 JSON 使用 `--redacted-storyboard`。风险发现仍保留本地调试所需的原始可疑行，分镜里的明显密钥赋值会被脱敏：
+
+```bash
+python developer_demo_gif_script_safety_preview.py --json --redacted-storyboard examples/demo.sh
+```
+
 ## 自检
 ```bash
 python test_developer_demo_gif_script_safety_preview.py
